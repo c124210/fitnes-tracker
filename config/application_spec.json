@@ -1,0 +1,30 @@
+{
+  "app_name": "Fitness Tracker Voice 01",
+  "audio_pipeline": {
+    "mode": "full-duplex",
+    "latency_ms": 350,
+    "vad": {
+      "server_side": true,
+      "threshold_ms": 350
+    }
+  },
+  "intents": [
+    {
+      "name": "track_workout",
+      "parameters": [
+        {"name": "exercise_type", "type": "string", "required": true},
+        {"name": "duration_minutes", "type": "number", "required": true}
+      ]
+    },
+    {
+      "name": "daily_summary",
+      "parameters": []
+    }
+  ],
+  "capabilities": [
+    "voice_activity_detection",
+    "workout_metric_extraction",
+    "dynamic_response",
+    "informal_to_structured_parsing"
+  ]
+}
